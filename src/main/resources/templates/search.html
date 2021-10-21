@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+
+<title>Gas Mileage Calculator</title>
+</head>
+<body>
+<div class="container">
+	<h2>Gas Mileage Calculator</h2>
+	<h4>Search for your car</h1>
+
+    <form th:action="@{/search}" th:object="${carSearch}" method="post" class="form">
+	    <div class="form-group">
+	        <label for="carMake">Car Make</label>
+	        <input class="form-control" type="text" th:field="*{carMake}" id="carMake" placeholder="Make">
+	    </div>
+	    <div class="form-group">
+	        <label for="carModel">Car Model</label>
+	        <input class="form-control" type="text" th:field="*{carModel}" id="carModel" placeholder="Model">
+	    </div>
+	    <div class="form-group">
+	        <label for="year">Year</label>
+	        <input class="form-control" type="number" th:field="*{year}" id="year" placeholder="Year">
+	    </div>
+	    
+	    <input type="submit"  class="btn btn-success" value="Search">
+	</form>
+</div>
+
+</body>
+</html>
