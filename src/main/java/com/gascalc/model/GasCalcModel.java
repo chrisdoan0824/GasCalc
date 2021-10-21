@@ -1,5 +1,10 @@
 package com.gascalc.model;
 
+/**
+ * Model to contain car information for Gas Calculations
+ * @author 
+ *
+ */
 public class GasCalcModel {
 
 	private String carMake;
