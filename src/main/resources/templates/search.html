@@ -17,7 +17,27 @@
     <form th:action="@{/search}" th:object="${carSearch}" method="post" class="form">
 	    <div class="form-group">
 	        <label for="carMake">Car Make</label>
-	        <input class="form-control" type="text" th:field="*{carMake}" id="carMake" placeholder="Make">
+	        <select class="form-control" th:field="*{carMake}" id="carMake">
+	        	<option value="Make">Make</option>
+	        	<option value="BMW">BMW</option>
+				<option value="Daewoo">Daewoo</option>
+	        	<option value="Ford">Ford</option>
+	        	<option value="Holden">Holden</option>
+	        	<option value="Honda">Honda</option>
+	        	<option value="Hyundai">Hyundai</option>
+	        	<option value="Isuzu">Isuzu</option>
+	        	<option value="Kia">Kia</option>
+	        	<option value="Lexus">Lexus</option>
+	        	<option value="Mazda">Mazda</option>
+	        	<option value="Mitsubishi">Mitsubishi</option>
+	        	<option value="Nissan">Nissan</option>
+	        	<option value="Peugeot">Peugeot</option>
+	        	<option value="Subaru">Subaru</option>
+	        	<option value="Suzuki">Suzuki</option>
+	        	<option value="Toyota">Toyota</option>
+	        	<option value="Volkswagen">Volkswagen</option>
+	        	<option value="Other">Other</option>
+	        </select>
 	    </div>
 	    <div class="form-group">
 	        <label for="carModel">Car Model</label>
