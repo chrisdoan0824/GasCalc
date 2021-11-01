@@ -13,7 +13,6 @@ public class GasCalcModel {
 		this.year = year;
 	}
 	
-	
 	public GasCalcModel() {}
 
 	public String getCarMake() {
