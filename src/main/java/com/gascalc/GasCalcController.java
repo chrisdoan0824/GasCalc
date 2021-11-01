@@ -12,6 +12,14 @@ import com.gascalc.model.GasCalcModel;
 
 public class GasCalcController {
 
+	@RequestMapping("/")
+	public String index(Model model) {
+		GasCalcModel carSearch = new GasCalcModel();
+		model.addAttribute("carSearch", carSearch);
+		
+		return "search";
+	}
+	
 	@RequestMapping("/search")
 	public String searchForm(Model model) {
 		GasCalcModel carSearch = new GasCalcModel();
