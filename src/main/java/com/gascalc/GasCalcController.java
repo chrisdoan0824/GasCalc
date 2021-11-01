@@ -12,6 +12,10 @@ import com.gascalc.model.GasCalcModel;
 
 public class GasCalcController {
 
+	/**
+	 * 
+	 * @return the home screen template
+	 */
 	@RequestMapping("/")
 	public String index(Model model) {
 		GasCalcModel carSearch = new GasCalcModel();
@@ -20,6 +24,11 @@ public class GasCalcController {
 		return "search";
 	}
 	
+
+	/**
+	 * 
+	 * @return the search screen template
+	 */
 	@RequestMapping("/search")
 	public String searchForm(Model model) {
 		GasCalcModel carSearch = new GasCalcModel();
@@ -28,7 +37,11 @@ public class GasCalcController {
 		return "search";
 	}
 	
-	
+
+	/**
+	 * 
+	 * @return the search screen template with results
+	 */
 	@PostMapping("/search")
 	public String searchResult(@ModelAttribute("carSearch") GasCalcModel model) {
 		return "search-result";
