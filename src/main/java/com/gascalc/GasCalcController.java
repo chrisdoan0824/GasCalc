@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.gascalc.model.GasCalcModel;
 
 @Controller
-
 public class GasCalcController {
 
 	/**
-	 * 
+	 * @param model to be added and edited by html
 	 * @return the home screen template
 	 */
 	@RequestMapping("/")
@@ -26,7 +25,7 @@ public class GasCalcController {
 	
 
 	/**
-	 * 
+	 * @param model to be added and edited by html
 	 * @return the search screen template
 	 */
 	@RequestMapping("/search")
@@ -39,8 +38,8 @@ public class GasCalcController {
 	
 
 	/**
-	 * 
-	 * @return the search screen template with results
+	 * @param model to be added and edited by html
+	 * @return the search result screen template with results
 	 */
 	@PostMapping("/search")
 	public String searchResult(@ModelAttribute("carSearch") GasCalcModel model) {
