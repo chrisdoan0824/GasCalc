@@ -52,55 +52,65 @@
 	     
 <script>
 
+	var carChoice = document.getElementById("carModel");
+	var yearChoice = document.getElementById("year");
+	var mpg = "";
+	
+	if((carChoice.value = "Civic") && (yearChoice.value = "1999"))
+	{
+		mpg = "Combined MPG: 39";
+	}
+	else if ((carChoice.value = "Civic") && (yearChoice.value = "2010"))
+	{
+		mpg = "Combined MPG: 30";
+	}
+	else if ((carChoice.value = "Accord") && (yearChoice.value = "1999"))
+	{
+		mpg = "Combined MPG: 28";
+	}
+	else if ((carChoice.value = "Accord") && (yearChoice.value = "2010"))
+	{
+		mpg = "Combined MPG: 26.5";
+	}
+	else if ((carChoice.value = "Impala") && (yearChoice.value = "1999"))
+	{
+		mpg = "Combined MPG: 25.6";
+	}
+	else if ((carChoice.value = "Impala") && (yearChoice.value = "2010"))
+	{
+		mpg = "Combined MPG: 23.5";
+	}
+	else if ((carChoice.value = "Suburban") && (yearChoice.value = "1999"))
+	{
+		mpg = "Combined MPG: 16";
+	}
+	else if ((carChoice.value = "Suburban") && (yearChoice.value = "2010"))
+	{
+		mpg = "Combined MPG: 18";
+	}
+	else if ((carChoice.value = "Fiesta") && (yearChoice.value = "1999"))
+	{
+		mpg = "Combined MPG: 34.1";
+	}
+	else if ((carChoice.value = "Fiesta") && (yearChoice.value = "2010"))
+	{
+		mpg = "Combined MPG: 37.5";
+	}
 
-var carChoice = document.getElementById("carModel");
-var yearChoice = document.getElementById("year");
-var mpg = "";
+	else if ((carChoice.value = "Focus") && (yearChoice.value = "1999"))
+	{
+		mpg = "Combined MPG: 30.2";
+	}
+	else if ((carChoice.value = "Focus") && (yearChoice.value = "2010"))
+	{
+		mpg = "Combined MPG: 29.5";
+	}
+	else 
+	{
+		mpg = "Combined MPG: 29.5";
+	}
+	return mpg;
 
-if((carChoice.value = "Civic") || (yearChoice.value = "1999"))
-{
-	mpg = "Combined MPG: 39";
-}
-else if ((carChoice.value = "Civic") || (yearChoice.value = "2010"))
-{
-	mpg = "Combined MPG: 30";
-}
-else if ((carChoice.value = "Accord") || (yearChoice.value = "1999"))
-{
-	mpg = "Combined MPG: 28";
-}
-else if ((carChoice.value = "Accord") || (yearChoice.value = "2010"))
-{
-	mpg = "Combined MPG: 26.5";
-}
-else if ((carChoice.value = "Impala") || (yearChoice.value = "1999"))
-{
-	mpg = "Combined MPG: 25.6";
-}
-else if ((carChoice.value = "Impala") || (yearChoice.value = "2010"))
-{
-	mpg = "Combined MPG: 23.5";
-}
-else if ((carChoice.value = "Suburban") || (yearChoice.value = "1999"))
-{
-	mpg = "Combined MPG: 16";
-}
-else if ((carChoice.value = "Suburban") || (yearChoice.value = "2010"))
-{
-	mpg = "Combined MPG: 18";
-}
-else if ((carChoice.value = "Fiesta") || (yearChoice.value = "1999"))
-{
-	mpg = "Combined MPG: 34.1";
-}
-else if ((carChoice.value = "Fiesta") || (yearChoice.value = "2010"))
-{
-	mpg = "Combined MPG: 37.5";
-}
-else 
-{
-	mpg = "Combined MPG: 29.5";
-}
 </script>
 
 </form>
