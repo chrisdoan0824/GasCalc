@@ -12,6 +12,9 @@ public class GasCalcModel {
 		this.carModel = carModel;
 		this.year = year;
 	}
+	
+	
+	public GasCalcModel() {}
 
 	public String getCarMake() {
 		return carMake;
