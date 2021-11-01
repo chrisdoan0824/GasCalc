@@ -12,12 +12,6 @@ public class GasCalcModel {
 		this.carModel = carModel;
 		this.year = year;
 	}
-	
-	
-	public GasCalcModel() {
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public String getCarMake() {
 		return carMake;
