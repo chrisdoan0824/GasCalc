@@ -15,11 +15,11 @@
 	<h4>Search for your car</h4>
 
     <form th:action="@{/search}" th:object="${carSearch}" method="post" class="form">
-	    <div class="form-group" id="carMake">
+	    <div class="form-group row" id="carMake">
 	        <label for="carMake">Car Make & Model</label>
 	        <br/>
 <!-- 	Commented Out - Creating drop down list        <input class="form-control" type="text" th:field="*{carMake}" id="carMake" placeholder="Make">  -->
-		<select name="carModel" id="carModel">
+		<select name="carModel" id="carModel" class="form-control col-sm-4">
 			 <option disabled selected value> -- select an option -- </option>
 			 <optgroup label="Honda">
 			 <option value="Civic" id = "Civic">Civic</option>
@@ -37,11 +37,11 @@
 		</select>
 </div>
 
- <div class="form-group" id="carYear">
+ <div class="form-group row" id="carYear">
 	        <label for="year">Year</label>
 	        <br>
 <!-- 	        <input class="form-control" type="number" th:field="*{year}" id="year" placeholder="Year"> -->
-	        <select name="year" id="year">
+	        <select name="year" id="year" class="form-control col-sm-4">
 	            <option disabled selected value> -- select an option -- </option>
  			 	<option value="1999">1999</option>
   			 	<option value="2010">2010</option>
