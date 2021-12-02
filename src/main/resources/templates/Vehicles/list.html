@@ -12,6 +12,7 @@
 <title>Vehicle List</title>
 </head>
 <body>
+<section class="bg-secondary pt-5 pb-5">
 <div class="container">
 	<h4>List of Vehicles</h4>
 	<hr>
@@ -19,7 +20,8 @@
 	<!-- Create a button to add new faculty -->
 	<a th:href="@{/Vehicles/search}" class="btn btn-dark btn-small mb-2">Add Vehicle Here</a>
 	
-	<table class="table table-bordered table-dark">
+	<table class="table table-bordered table-dark table-striped table-hover">
+	<caption>Click "Add Vehicle" button above to find another car</caption>
 		<thead>
 			<tr class="bg-danger">
 				<th>Car Make</th>
@@ -27,6 +29,7 @@
 				<th>Car Year</th>
 				<th>Highway MPG</th>
 				<th>City MPG</th>
+				<th>Edit Entry</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -46,5 +49,10 @@
 		</tbody>
 	</table>
 </div>
+</section>
+<div
+  style="background-image: url('https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/08/Speedometer.jpg');
+  height: 400px;"
+></div>
 </body>
 </html>
