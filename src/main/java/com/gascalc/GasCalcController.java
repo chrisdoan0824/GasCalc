@@ -58,10 +58,18 @@ public class GasCalcController {
 		
 		theModel.addAttribute("vehicles", theGasCalcModel);
 		
-		return "redirect:/Vehicles/search";
+		return "/Vehicles/search";
 	}
 	
-	
+	@PostMapping("/save")
+	public String saveVehicle(@ModelAttribute("vehicles") GasCalcModel theGasCalcModel) {
+		
+		//Register the vehicle
+		vehicleService.save(theGasCalcModel);
+		
+		//Block duplicate submission for accidental page refresh
+		return "redirect:/Vehicles/list";
+	}
 	
 	@GetMapping("/delete")
 	public String delete(@RequestParam("vehicleId") int theId)
