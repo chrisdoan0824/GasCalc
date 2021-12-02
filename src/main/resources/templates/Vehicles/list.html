@@ -12,14 +12,17 @@
 <title>Vehicle List</title>
 </head>
 <body>
+<section class="bg-secondary pt-5 pb-5 .bg-gradient" style="--bs-bg-opacity: 1.5">
 <div class="container">
-	<h4>List of Vehicles</h4>
+	<h2 class="text-dark font-weight-bold" style="text-align:center;"><mark class="bg-dark bg-gradient text-light" style="--bs-bg-opacity: .2;">Gas Mileage Calculator</mark></h2>
+	<h4><mark class="bg-dark bg-gradient text-light" style="--bs-bg-opacity: .18;">List of Vehicles</mark></h4>
 	<hr>
 	
 	<!-- Create a button to add new faculty -->
 	<a th:href="@{/Vehicles/viewAddForm}" class="btn btn-primary btn-small mb-2">Add Vehicle Here</a>
 	
-	<table class="table table-bordered table-dark">
+	<table class="table table-bordered table-dark table-striped table-hover table-condensed">
+	<caption class="text-light">Click "Add Vehicle" button above to find another car</caption>
 		<thead>
 			<tr class="bg-danger">
 				<th>Car Make</th>
@@ -27,6 +30,7 @@
 				<th>Car Year</th>
 				<th>Highway MPG</th>
 				<th>City MPG</th>
+				<th class="text-warning font-italic">Edit Entry</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -39,12 +43,19 @@
 		
 		<!-- Update Button -->
 		<td><a th:href="@{/Vehicles/viewUpdateForm(vehicleId=${theVehicle.id})}"
+
 		class="btn btn-success btn-sm">Update</a>
 		<a th:href="@{/Vehicles/delete(vehicleId=${theVehicle.id})}"
 		class="btn btn-danger btn-sm" onclick="if(!(confirm('Are you sure you want to delete this Vehicle?')))return false">Delete</a>
+
 		
 		</tbody>
 	</table>
 </div>
+</section>
+<div
+  style="background-image: url('https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/08/Speedometer.jpg');
+  height: 320px;"
+></div>
 </body>
 </html>
