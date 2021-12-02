@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gascalc.model.GasCalcModel;
 import com.gascalc.service.GasCalcService;
@@ -20,6 +21,8 @@ public class GasCalcController {
 	public GasCalcController (GasCalcService theVehicleService) {
 		vehicleService = theVehicleService;
 	}
+	
+	
 	
 	//Mapping for "/list"
 	@GetMapping("/list")
@@ -37,6 +40,46 @@ public class GasCalcController {
 		
 	}
 
+	
+	@GetMapping("/viewAddForm")
+	public String viewAddForm(Model theModel)
+	{
+		GasCalcModel theGasCalcModel = new GasCalcModel();
+		
+		theModel.addAttribute("vehicles", theGasCalcModel);
+		
+		return "/Vehicles/search";
+	}
+	
+	@GetMapping("/viewUpdateForm")
+	public String viewUpdateForm(@RequestParam("vehicleId")int theId, Model theModel)
+	{
+		GasCalcModel theGasCalcModel = vehicleService.findById(theId);
+		
+		theModel.addAttribute("vehicles", theGasCalcModel);
+		
+		return "/Vehicles/search";
+	}
+	
+	@PostMapping("/save")
+	public String saveVehicle(@ModelAttribute("vehicles") GasCalcModel theGasCalcModel) {
+		
+		//Register the vehicle
+		vehicleService.save(theGasCalcModel);
+		
+		//Block duplicate submission for accidental page refresh
+		return "redirect:/Vehicles/list";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam("vehicleId") int theId)
+	{
+		vehicleService.deleteById(theId);
+		
+		return "redirect:/Vehicles/list";
+	}
+	
+	
 	@RequestMapping("/search")
 	public String searchForm(Model model) {
 		GasCalcModel carSearch = new GasCalcModel();
@@ -51,3 +94,4 @@ public class GasCalcController {
 		return "Vehicles/search-result";
 	}
 }
+

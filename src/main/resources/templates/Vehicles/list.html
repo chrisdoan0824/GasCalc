@@ -19,7 +19,7 @@
 	<hr>
 	
 	<!-- Create a button to add new faculty -->
-	<a th:href="@{/Vehicles/search}" class="btn btn-dark btn-small mb-2">Add Vehicle Here</a>
+	<a th:href="@{/Vehicles/viewAddForm}" class="btn btn-primary btn-small mb-2">Add Vehicle Here</a>
 	
 	<table class="table table-bordered table-dark table-striped table-hover table-condensed">
 	<caption class="text-light">Click "Add Vehicle" button above to find another car</caption>
@@ -43,9 +43,11 @@
 		
 		<!-- Update Button -->
 		<td><a th:href="@{/Vehicles/viewUpdateForm(vehicleId=${theVehicle.id})}"
-		class="btn btn-danger btn-sm" >Update</a>
-		<a th:href="@{/Faculties/delete(vehicleId=${theVehicle.id})}"
-		class="btn btn-danger btn-sm"  onclick="if(!(confirm('Are you sure you want to delete this Vehicle?')))return false">Delete</a>
+
+		class="btn btn-success btn-sm">Update</a>
+		<a th:href="@{/Vehicles/delete(vehicleId=${theVehicle.id})}"
+		class="btn btn-danger btn-sm" onclick="if(!(confirm('Are you sure you want to delete this Vehicle?')))return false">Delete</a>
+
 		
 		</tbody>
 	</table>
