@@ -15,10 +15,12 @@
 
 </head>
 <body>
-
+<section class="bg-dark pt-5 pb-5 bg-gradient">
 <div class="container">
-	<h2>Gas Mileage Calculator</h2>
-	<h4>Register Your Car</h4>
+	<h1 class="text-danger " style="text-align:center;"><mark class="bg-secondary bg-gradient text-danger" style="--bs-bg-opacity: .1;">Gas Mileage Calculator</mark></h1>
+		<br>
+		<h4 class="text-light font-weight-bold"><mark class="bg-secondary bg-gradient text-light" style="--bs-bg-opacity: .18;">Search for your car</mark></h4>
+	<label class="text-white" >Please fill out the fields below: </label>
 	
 <form action="#" th:action="@{/Vehicles/save}" th:object="${vehicles}" method="POST">
 
@@ -51,6 +53,7 @@ class="form-control mb-4 col-4" placeholder="City MPG" >
 role = "button" aria-expanded="false" aria-controls="collapseExample">Return to Vehicle List</a>
    
 </div>
+</section>
   <div
   class="bg-image"
   style="
