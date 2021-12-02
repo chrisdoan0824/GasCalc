@@ -11,38 +11,54 @@
 	integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
 	crossorigin="anonymous">
 
-<title>Gas Mileage Calculator</title>
+<title class="font-weight-bold">Gas Mileage Calculator</title>
+
 </head>
 <body>
-<section class="bg-secondary pt-5 pb-5">
+<section class="bg-dark pt-5 pb-5">
 	<div class="container">
-		<h2>Gas Mileage Calculator</h2>
-		<h4>Search for your car</h4>
-
+		<h2 class="text-danger" style="text-align:center;">Gas Mileage Calculator</h2>
+		<h4 class="text-light font-weight-bold">Search for your car</h4>
+		<label class="text-white" >Please fill out the fields below: </label>
 		<form th:action="@{/search}" th:object="${carSearch}" method="post"
-			class="form">
-			<div class="form-group" id="carMake">
-				<label for="make">Car Make:</label>
+			class="form form-inline table-light">
+			
+			
+			<div class="input-group mb-3" id="carMake">
+				<label class="text-white" for="make"></label>
+				<div class="input-group-prepend font-weight-bold">
+				<span class="input-group-text font-weight-bold" id="carMake"> Car Make: </span></div>
 				<input class="form-control" type="text" th:field="*{carMake}"
-					id="carMake" placeholder="Make">
+					id="carMake" placeholder="Enter the Car Make..." aria-label="Make (brand):" aria-describedby="carMake">
 			</div>
 
-			<div class="form-group" id="carModel">
-				<label for="model">Car Model:</label>
+
+			<div class="input-group mb-3" id="carModel">
+				<label class="text-white" for="model"></label>
+				<div class="input-group-prepend">
+				<span class="input-group-text font-weight-bold" id="carModel"> Car Model: </span></div>
 				<input class="form-control" type="text" th:field="*{carModel}"
-					id="carModel" placeholder="Model">
+					id="carModel" placeholder="Enter the Car Model..." aria-label="Model:" aria-describedby="carModel">
 			</div>
 
 
-			<div class="form-group" id="carYear">
-				<label for="year">Year:</label> 
-				<input class="form-control" type="number" th:field="*{year}" id="year" placeholder="Year">
+			<div class="input-group mb-3" id="carYear">
+				<label class="text-white" for="year"></label> 
+				<div class="input-group-prepend">
+				<span class="input-group-text font-weight-bold" id="carYear"> Car Year: </span></div>
+				<input class="form-control" type="number" th:field="*{year}" 
+				id="year" placeholder="Year" aria-label="Year:" aria-describedby="carYear">
+				
+<!-- MAY CAUSE ISSUES (may prevent entered year from being saved) -->	<script type="text/javascript">document.getElementById("year").value = "";</script>
+
 			</div>
-				<br> <input type="submit" class="btn btn-success"
+				<br> <input type="submit" class="btn btn-lg btn-danger btn-block"
 					value="Search">
+					<br>
+					
 		</form>
-		
-		<table class="table table-bordered table-danger">
+		<br>
+		<table class="table table-bordered table-secondary">
 		<thead>
 			<tr class="thead-dark">
 				<th>Car Make</th>
@@ -53,12 +69,12 @@
 			<tr />
 		<thead />
 		<tbody>
- 		<tr th:each="theFaculty : ${faculties}">
-		<td th:Text="${car.carMake}"/>
-		<td th:Text="${car.carModel}"/>
-		<td th:Text="${car.year}"/>
-		<td th:text="${car.highwayMPG}"/>
-		<td th:text="${car.cityMPG}"/>
+ 		<tr th:each="theVehicles : ${vehicles}">
+		<td class="table-secondary" th:Text="${car.carMake}">-</td>
+		<td class="table-secondary" th:Text="${car.carModel}">-</td>
+		<td class="table-secondary" th:Text="${car.year}">-</td>
+		<td class="table-secondary" th:text="${car.highwayMPG}">-</td>
+		<td class="table-secondary" th:text="${car.cityMPG}">-</td>
 		
 		</tbody>
 	</table>
