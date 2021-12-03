@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
 <!-- Required meta tags -->
@@ -22,26 +22,50 @@
 		<h4 class="text-light font-weight-bold"><mark class="bg-secondary bg-gradient text-light" style="--bs-bg-opacity: .18;">Search for your car</mark></h4>
 	<label class="text-white" >Please fill out the fields below: </label>
 	
-<form action="#" th:action="@{/Vehicles/save}" th:object="${vehicles}" method="POST">
+<form action="#" th:action="@{/Vehicles/save}" th:object="${vehicles}" method="POST" class="form form-inline table-light">>
 
 <!-- Invisible Form as Needed to Update Info -->
 <input type="hidden" th:field="*{id}"/>
 
+<div class="input-group mb-3" id="carMake">
+				<label class="text-white" for="make"></label>
+				<div class="input-group-prepend font-weight-bold">
+				<span class="input-group-text font-weight-bold" id="carMake"> Car Make: </span></div>
+				<input class="form-control" type="text" th:field="*{carMake}"
+					id="carMake" placeholder="Enter the Car Make..." aria-label="Make (brand):" aria-describedby="carMake">
+</div>
 
-<input type="text" th:field="*{carMake}"
-class="form-control mb-4 col-4" placeholder="Car Make" >
+<div class="input-group mb-3" id="carModel">
+				<label class="text-white" for="model"></label>
+				<div class="input-group-prepend">
+				<span class="input-group-text font-weight-bold" id="carModel"> Car Model: </span></div>
+				<input class="form-control" type="text" th:field="*{carModel}"
+					id="carModel" placeholder="Enter the Car Model..." aria-label="Model:" aria-describedby="carModel">
+			</div>
 
-<input type="text" th:field="*{carModel}"
-class="form-control mb-4 col-4" placeholder="Car Model" >
+<div class="input-group mb-3" id="carYear">
+				<label class="text-white" for="year"></label>
+				<div class="input-group-prepend">
+				<span class="input-group-text font-weight-bold" id="year"> Car Year: </span></div>
+				<input class="form-control" type="text" th:field="*{year}"
+					id="carModel" placeholder="Enter the Car Year..." aria-label="Year:" aria-describedby="year">
+			</div>
 
-<input type="text" th:field="*{year}"
-class="form-control mb-4 col-4" placeholder="Car Year" >
+<div class="input-group mb-3" id="highwayMPG">
+				<label class="text-white" for="highwayMPG"></label>
+				<div class="input-group-prepend">
+				<span class="input-group-text font-weight-bold" id="highwayMPG"> Highway MPG: </span></div>
+				<input class="form-control" type="text" th:field="*{highwayMPG}"
+					id="highwayMPG" placeholder="Enter the Cars Highway Miles Per Gallon..." aria-label="Highway MPG:" aria-describedby="highwayMPG">
+			</div>
 
-<input type="text" th:field="*{highwayMPG}"
-class="form-control mb-4 col-4" placeholder="Highway MPG" >
-
-<input type="text" th:field="*{cityMPG}"
-class="form-control mb-4 col-4" placeholder="City MPG" >
+<div class="input-group mb-3" id="cityMPG">
+				<label class="text-white" for="cityMPG"></label>
+				<div class="input-group-prepend">
+				<span class="input-group-text font-weight-bold" id="cityMPG"> City MPG: </span></div>
+				<input class="form-control" type="text" th:field="*{cityMPG}"
+					id="cityMPG" placeholder="Enter the Cars City Miles Per Gallon..." aria-label="City MPG:" aria-describedby="cityMPG">
+			</div>
 
 
 
